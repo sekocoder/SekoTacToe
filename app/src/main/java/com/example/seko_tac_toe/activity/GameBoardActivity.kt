@@ -52,7 +52,7 @@ class GameBoardActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {}
         })
             boardGone()
-            binding.winRateText.visibility = View.VISIBLE
+
             Handler(Looper.myLooper()!!).postDelayed({
 
                 boardVisible()
@@ -63,10 +63,6 @@ class GameBoardActivity : AppCompatActivity() {
                 displayWinRate()
 
                 if (viewModel.resetFlag == 1) {
-                    if(viewModel.roundEndFlag!=1){
-                        checkWin()
-                    }
-
                     resetGame()
                 }
             }, 2500)
@@ -113,6 +109,7 @@ class GameBoardActivity : AppCompatActivity() {
 
     private fun displayWinRate() {
         binding.winRateText.text = "Win Percentage : " + viewModel.winRatedb.toString() + " %"
+        binding.winRateText.visibility = View.VISIBLE
     }
 
     private fun setColor(currentBtn: Button) {
