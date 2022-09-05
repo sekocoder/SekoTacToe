@@ -1,6 +1,9 @@
 # Seko-Tac-Toe
 
-A Tic-Tac-Toe Game Android Application
+A Tic-Tac-Toe Game Android Application 
+
+# Screenshots
+![sekotictactoe](https://user-images.githubusercontent.com/93031862/188516224-e3770282-1084-447a-906c-fe06d4a4c7b6.jpeg)
 
 # Features 
 
