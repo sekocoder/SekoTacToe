@@ -62,6 +62,10 @@ class GameBoardActivity : AppCompatActivity() {
 
                 displayWinRate()
 
+                if(viewModel.roundEndFlag == 1 && viewModel.resetFlag == 0){
+                    retainLine()
+                }
+
                 if (viewModel.resetFlag == 1) {
                     resetGame()
                 }
@@ -215,6 +219,28 @@ class GameBoardActivity : AppCompatActivity() {
             autoMove()
         }
 
+    }
+
+    private fun retainLine() {
+        if (viewModel.btn1 == viewModel.btn2 && viewModel.btn2 == viewModel.btn3 && viewModel.btn3 != "") {
+            binding.rowOneLine.visibility = View.VISIBLE
+
+        } else if (viewModel.btn4 == viewModel.btn5 && viewModel.btn5 == viewModel.btn6 && viewModel.btn6 != "") {
+            binding.rowTwoLine.visibility = View.VISIBLE
+        } else if (viewModel.btn7 == viewModel.btn8 && viewModel.btn8 == viewModel.btn9 && viewModel.btn9 != "") {
+            binding.rowThreeLine.visibility = View.VISIBLE
+        } else if (viewModel.btn1 == viewModel.btn4 && viewModel.btn4 == viewModel.btn7 && viewModel.btn7 != "") {
+            binding.columnOneLine.visibility = View.VISIBLE
+        } else if (viewModel.btn2 == viewModel.btn5 && viewModel.btn5 == viewModel.btn8 && viewModel.btn8 != "") {
+            binding.columnTwoLine.visibility = View.VISIBLE
+        } else if (viewModel.btn3 == viewModel.btn6 && viewModel.btn6 == viewModel.btn9 && viewModel.btn9 != "") {
+            binding.columnThreeLine.visibility = View.VISIBLE
+        } else if (viewModel.btn1 == viewModel.btn5 && viewModel.btn5 == viewModel.btn9 && viewModel.btn9 != "") {
+            binding.diagonalOneLine.visibility = View.VISIBLE
+        } else if (viewModel.btn3 == viewModel.btn5 && viewModel.btn5 == viewModel.btn7 && viewModel.btn7 != "") {
+            binding.diagonalTwoLine.visibility = View.VISIBLE
+
+        }
     }
 
     private fun checkWin() {
