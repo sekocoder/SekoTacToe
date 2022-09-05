@@ -40,17 +40,17 @@ class GameBoardActivity : AppCompatActivity() {
             FirebaseDatabase.getInstance("https://seko-tac-toe-default-rtdb.asia-southeast1.firebasedatabase.app/")
                 .reference
 
-        if(viewModel.gameMode == "Single Player") {
+        if (viewModel.gameMode == "Single Player") {
 
-        dbref.child("user").addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                for (postSnapshot in snapshot.children) {
-                    currentUser = postSnapshot.getValue(User::class.java)!!
+            dbref.child("user").addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    for (postSnapshot in snapshot.children) {
+                        currentUser = postSnapshot.getValue(User::class.java)!!
+                    }
                 }
-            }
 
-            override fun onCancelled(error: DatabaseError) {}
-        })
+                override fun onCancelled(error: DatabaseError) {}
+            })
             boardGone()
 
             Handler(Looper.myLooper()!!).postDelayed({
@@ -62,7 +62,7 @@ class GameBoardActivity : AppCompatActivity() {
 
                 displayWinRate()
 
-                if(viewModel.roundEndFlag == 1 && viewModel.resetFlag == 0){
+                if (viewModel.roundEndFlag == 1 && viewModel.resetFlag == 0) {
                     retainLine()
                 }
 
@@ -70,7 +70,7 @@ class GameBoardActivity : AppCompatActivity() {
                     resetGame()
                 }
             }, 2500)
-        }else{
+        } else {
             checkWin()
 
         }
@@ -277,18 +277,18 @@ class GameBoardActivity : AppCompatActivity() {
                 getColor(android.R.color.darker_gray),
                 PorterDuff.Mode.MULTIPLY
             )
-            if(viewModel.gameMode =="Single Player"){
+            if (viewModel.gameMode == "Single Player") {
                 updateWinNMatchCount(0)
                 boardGone()
 
-            Handler(Looper.myLooper()!!).postDelayed({
+                Handler(Looper.myLooper()!!).postDelayed({
 
-                boardVisible()
+                    boardVisible()
 
-                viewModel.calculateWinRate(currentUser.winNumber!!, currentUser.matchNumber!!)
-                displayWinRate()
+                    viewModel.calculateWinRate(currentUser.winNumber!!, currentUser.matchNumber!!)
+                    displayWinRate()
 
-            }, 2500)
+                }, 2500)
             }
 
         }
@@ -317,7 +317,6 @@ class GameBoardActivity : AppCompatActivity() {
     }
 
     private fun displayWinner(symbol: String) {
-
 
 
         viewModel.roundEndFlagSetToOne()
@@ -350,7 +349,7 @@ class GameBoardActivity : AppCompatActivity() {
             )
         }
 
-        if(viewModel.gameMode == "Single Player") {
+        if (viewModel.gameMode == "Single Player") {
             boardGone()
 
             Handler(Looper.myLooper()!!).postDelayed({

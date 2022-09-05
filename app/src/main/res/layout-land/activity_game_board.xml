@@ -4,157 +4,157 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.GameBoardActivity"
-    android:background="@color/bgColour">
+    android:background="@color/bgColour"
+    tools:context=".activity.GameBoardActivity">
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:text="@string/reset_board"
         android:id="@+id/resetGridButton"
         android:layout_width="239dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:onClick="manualReset"
         android:padding="6dp"
+        android:text="@string/reset_board"
         android:textColor="@color/white"
         android:textSize="12sp"
         android:textStyle="bold"
-        android:backgroundTint="@android:color/holo_blue_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="manualReset"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/gridBorder"
         android:layout_width="230dp"
         android:layout_height="210dp"
+        android:layout_marginBottom="5dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginBottom="5dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/winRateText"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:paddingHorizontal="10dp"
-        android:padding="5dp"
         android:background="@android:color/holo_blue_light"
+        android:padding="5dp"
+        android:paddingHorizontal="10dp"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="13sp"
-        android:textAlignment="center"
         android:textStyle="bold"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/ticTacToeGrid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         app:columnCount="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginBottom="5dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn1"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:textSize="16sp"
+            android:backgroundTint="@color/white"
             android:onClick="onTileClick"
             android:textColor="@color/white"
-            android:backgroundTint="@color/white"/>
+            android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn2"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:textSize="16sp"
             android:layout_marginStart="14dp"
+            android:backgroundTint="@color/white"
             android:onClick="onTileClick"
             android:textColor="@color/white"
-            android:backgroundTint="@color/white"/>
+            android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn3"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:textSize="16sp"
             android:layout_marginStart="14dp"
+            android:backgroundTint="@color/white"
             android:onClick="onTileClick"
             android:textColor="@color/white"
-            android:backgroundTint="@color/white"/>
+            android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn4"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:textSize="16sp"
-            android:onClick="onTileClick"
             android:layout_marginTop="3dp"
+            android:backgroundTint="@color/white"
+            android:onClick="onTileClick"
             android:textColor="@color/white"
-            android:backgroundTint="@color/white"/>
+            android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn5"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:textSize="16sp"
             android:layout_marginStart="14dp"
-            android:onClick="onTileClick"
             android:layout_marginTop="3dp"
+            android:backgroundTint="@color/white"
+            android:onClick="onTileClick"
             android:textColor="@color/white"
-            android:backgroundTint="@color/white"/>
+            android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn6"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:textSize="16sp"
             android:layout_marginStart="14dp"
-            android:onClick="onTileClick"
             android:layout_marginTop="3dp"
+            android:backgroundTint="@color/white"
+            android:onClick="onTileClick"
             android:textColor="@color/white"
-            android:backgroundTint="@color/white"/>
+            android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn7"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:textSize="16sp"
-            android:onClick="onTileClick"
             android:layout_marginTop="3dp"
+            android:backgroundTint="@color/white"
+            android:onClick="onTileClick"
             android:textColor="@color/white"
-            android:backgroundTint="@color/white"/>
+            android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn8"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:textSize="16sp"
             android:layout_marginStart="14dp"
-            android:onClick="onTileClick"
             android:layout_marginTop="3dp"
+            android:backgroundTint="@color/white"
+            android:onClick="onTileClick"
             android:textColor="@color/white"
-            android:backgroundTint="@color/white"/>
+            android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn9"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:textSize="16sp"
             android:layout_marginStart="14dp"
-            android:onClick="onTileClick"
             android:layout_marginTop="3dp"
+            android:backgroundTint="@color/white"
+            android:onClick="onTileClick"
             android:textColor="@color/white"
-            android:backgroundTint="@color/white"/>
+            android:textSize="16sp" />
 
     </androidx.gridlayout.widget.GridLayout>
 
@@ -163,31 +163,30 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:padding="8dp"
         android:background="@color/white"
-        android:textColor="@color/white"
+        android:padding="8dp"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="14sp"
         android:textStyle="bold"
         android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ticTacToeGrid"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/columnOneLine"
         android:layout_width="200dp"
         android:layout_height="10dp"
+        android:layout_marginEnd="163dp"
         android:background="#F44336"
         android:rotation="90"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginEnd="163dp"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/columnTwoLine"
@@ -195,59 +194,59 @@
         android:layout_height="10dp"
         android:background="#F44336"
         android:rotation="90"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/columnThreeLine"
         android:layout_width="200dp"
         android:layout_height="10dp"
+        android:layout_marginStart="163dp"
         android:background="#F44336"
         android:rotation="90"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="163dp"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/rowOneLine"
         android:layout_width="200dp"
         android:layout_height="10dp"
+        android:layout_marginBottom="143dp"
         android:background="#F44336"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginBottom="143dp"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/rowTwoLine"
         android:layout_width="200dp"
         android:layout_height="10dp"
         android:background="#F44336"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/rowThreeLine"
         android:layout_width="200dp"
         android:layout_height="10dp"
+        android:layout_marginTop="143dp"
         android:background="#F44336"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="143dp"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/diagonalOneLine"
@@ -255,11 +254,11 @@
         android:layout_height="10dp"
         android:background="#F44336"
         android:rotation="45"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/diagonalTwoLine"
@@ -267,11 +266,11 @@
         android:layout_height="10dp"
         android:background="#F44336"
         android:rotation="-45"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -279,10 +278,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

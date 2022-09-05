@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.HomeScreenActivity"
-    android:background="@color/bgColour">
+    android:background="@color/bgColour"
+    tools:context=".activity.HomeScreenActivity">
 
-<!--    <androidx.appcompat.widget.AppCompatButton-->
-<!--        android:id="@+id/signOutButton"-->
-<!--        android:layout_width="120dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_marginEnd="10dp"-->
-<!--        android:backgroundTint="@android:color/holo_blue_light"-->
-<!--        android:padding="10dp"-->
-<!--        android:text="@string/sign_out"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="14sp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <!--    <androidx.appcompat.widget.AppCompatButton-->
+    <!--        android:id="@+id/signOutButton"-->
+    <!--        android:layout_width="120dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginEnd="10dp"-->
+    <!--        android:backgroundTint="@android:color/holo_blue_light"-->
+    <!--        android:padding="10dp"-->
+    <!--        android:text="@string/sign_out"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="14sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -37,94 +37,94 @@
         android:id="@+id/crossSymbolText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/selected"
-        android:padding="4dp"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="-10dp"
         android:background="@android:color/holo_blue_light"
+        android:padding="4dp"
+        android:text="@string/selected"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="12sp"
-        android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/crossBorderButton"
-        app:layout_constraintBottom_toTopOf="@id/crossBorderButton" />
+        app:layout_constraintBottom_toTopOf="@id/crossBorderButton"
+        app:layout_constraintStart_toStartOf="@id/crossBorderButton" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/circleSymbolText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/selected"
-        android:padding="4dp"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="-10dp"
         android:background="@android:color/holo_blue_light"
+        android:padding="4dp"
+        android:text="@string/selected"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="12sp"
-        android:textAlignment="center"
         android:textStyle="bold"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@id/circleBorderButton"
-        app:layout_constraintBottom_toTopOf="@id/circleBorderButton" />
+        app:layout_constraintBottom_toTopOf="@id/circleBorderButton"
+        app:layout_constraintStart_toStartOf="@id/circleBorderButton" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/crossBorderButton"
-        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="55dp"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:onClick="selectCrossUI"
-        app:layout_constraintStart_toStartOf="@id/singlePlayerButton"
         app:layout_constraintEnd_toEndOf="@id/singlePlayerButton"
+        app:layout_constraintStart_toStartOf="@id/singlePlayerButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/circleBorderButton"
-        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginTop="55dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:onClick="selectCrossUI"
         android:visibility="gone"
-        android:layout_marginEnd="4dp"
         app:layout_constraintEnd_toEndOf="@id/multiPlayerPlayerButton"
         app:layout_constraintStart_toStartOf="@id/multiPlayerPlayerButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:text="@string/x"
         android:id="@+id/crossButton"
-        android:textColor="@color/white"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="60dp"
         android:layout_marginStart="5dp"
-        android:textSize="30sp"
+        android:layout_marginTop="60dp"
         android:onClick="selectCrossUI"
-        app:layout_constraintStart_toStartOf="@id/singlePlayerButton"
+        android:text="@string/x"
+        android:textColor="@color/white"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@id/singlePlayerButton"
+        app:layout_constraintStart_toStartOf="@id/singlePlayerButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:text="@string/o"
         android:id="@+id/circleButton"
-        android:textColor="@color/white"
-        android:textSize="30sp"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="5dp"
         android:onClick="selectCircleUI"
-        app:layout_constraintStart_toStartOf="@id/multiPlayerPlayerButton"
+        android:text="@string/o"
+        android:textColor="@color/white"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@id/multiPlayerPlayerButton"
+        app:layout_constraintStart_toStartOf="@id/multiPlayerPlayerButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/singlePlayerButton"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:layout_marginStart="120dp"
+        android:layout_marginTop="200dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:onClick="selectSinglePlayerMode"
         android:paddingVertical="15dp"
@@ -137,18 +137,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:text="@string/multi_player"
         android:id="@+id/multiPlayerPlayerButton"
-        android:backgroundTint="@android:color/holo_blue_light"
         android:layout_width="260dp"
-        android:paddingVertical="15dp"
-        android:textSize="14sp"
-        android:textScaleX="1.1"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:layout_marginEnd="120dp"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:onClick="selectMultiplePlayerMode"
+        android:paddingVertical="15dp"
+        android:text="@string/multi_player"
         android:textColor="@color/white"
+        android:textScaleX="1.1"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

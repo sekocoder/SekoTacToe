@@ -30,23 +30,23 @@ class HomeScreenActivity : AppCompatActivity() {
 
         if (viewModel.symbolSelected == "X") {
             selectCrossUI(binding.crossButton)
-        } else if(viewModel.symbolSelected == "O") {
+        } else if (viewModel.symbolSelected == "O") {
             selectCircleUI(binding.circleButton)
-        }else{
+        } else {
             binding.singlePlayerButton.visibility = View.GONE
             binding.multiPlayerPlayerButton.visibility = View.GONE
             binding.crossSymbolText.visibility = View.GONE
             binding.crossBorderButton.visibility = View.GONE
             binding.crossButton.visibility = View.GONE
             binding.circleButton.visibility = View.GONE
-            binding.progressBar.visibility =View.VISIBLE
+            binding.progressBar.visibility = View.VISIBLE
 
             Handler(Looper.myLooper()!!).postDelayed({
                 binding.singlePlayerButton.visibility = View.VISIBLE
                 binding.multiPlayerPlayerButton.visibility = View.VISIBLE
                 binding.crossButton.visibility = View.VISIBLE
                 binding.circleButton.visibility = View.VISIBLE
-                binding.progressBar.visibility =View.GONE
+                binding.progressBar.visibility = View.GONE
                 Toast.makeText(this, "Select a Symbol", Toast.LENGTH_LONG).show()
             }, 2500)
 
@@ -87,9 +87,9 @@ class HomeScreenActivity : AppCompatActivity() {
     }
 
     fun selectSinglePlayerMode(view: View) {
-        if(viewModel.symbolSelected == "symbol"){
+        if (viewModel.symbolSelected == "symbol") {
             Toast.makeText(this, "Select a Symbol", Toast.LENGTH_LONG).show()
-        }else{
+        } else {
             gameMode = "Single Player"
             val intent = Intent(this, GameBoardActivity::class.java)
             intent.putExtra("Game Mode Tag", gameMode)
@@ -100,9 +100,9 @@ class HomeScreenActivity : AppCompatActivity() {
     }
 
     fun selectMultiplePlayerMode(view: View) {
-        if(viewModel.symbolSelected == "symbol"){
+        if (viewModel.symbolSelected == "symbol") {
             Toast.makeText(this, "Select a Symbol", Toast.LENGTH_LONG).show()
-        }else {
+        } else {
             gameMode = "Multi Player"
             val intent = Intent(this, GameBoardActivity::class.java)
             intent.putExtra("Game Mode Tag", gameMode)
