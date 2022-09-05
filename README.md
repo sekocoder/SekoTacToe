@@ -1,6 +1,6 @@
 # Seko-Tac-Toe
 
-A Tic-Tac-Toe Game Android Application.
+A Tic-Tac-Toe Game Android Application
 
 # Features 
 
