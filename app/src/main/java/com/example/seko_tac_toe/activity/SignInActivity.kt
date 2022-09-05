@@ -54,7 +54,6 @@ class SignInActivity : AppCompatActivity() {
             val winNumber = 0
             val matchNumber = 0
             val uidCheck = auth.currentUser?.uid.toString()
-            Toast.makeText(this, uidCheck, Toast.LENGTH_LONG).show()
             dbref =
                 FirebaseDatabase.getInstance("https://seko-tac-toe-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
             dbref.child("user").child(auth.currentUser!!.uid)
