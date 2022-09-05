@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.GameBoardActivity"
+    android:background="@color/bgColour">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:text="@string/reset_board"
+        android:id="@+id/resetGridButton"
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:padding="6dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:backgroundTint="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="manualReset"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/gridBorder"
+        android:layout_width="230dp"
+        android:layout_height="210dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="5dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/winRateText"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="10dp"
+        android:padding="5dp"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/ticTacToeGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:columnCount="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="5dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn1"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:textSize="16sp"
+            android:onClick="onTileClick"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn2"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:textSize="16sp"
+            android:layout_marginStart="14dp"
+            android:onClick="onTileClick"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn3"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:textSize="16sp"
+            android:layout_marginStart="14dp"
+            android:onClick="onTileClick"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn4"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:textSize="16sp"
+            android:onClick="onTileClick"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn5"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:textSize="16sp"
+            android:layout_marginStart="14dp"
+            android:onClick="onTileClick"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn6"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:textSize="16sp"
+            android:layout_marginStart="14dp"
+            android:onClick="onTileClick"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn7"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:textSize="16sp"
+            android:onClick="onTileClick"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn8"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:textSize="16sp"
+            android:layout_marginStart="14dp"
+            android:onClick="onTileClick"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn9"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:textSize="16sp"
+            android:layout_marginStart="14dp"
+            android:onClick="onTileClick"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"/>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/gameResultText"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        android:background="@color/white"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ticTacToeGrid"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/columnOneLine"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:background="#F44336"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="163dp"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/columnTwoLine"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:background="#F44336"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/columnThreeLine"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:background="#F44336"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="163dp"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rowOneLine"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:background="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="143dp"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rowTwoLine"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:background="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rowThreeLine"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:background="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="143dp"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/diagonalOneLine"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:background="#F44336"
+        android:rotation="45"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/diagonalTwoLine"
+        android:layout_width="200dp"
+        android:layout_height="10dp"
+        android:background="#F44336"
+        android:rotation="-45"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

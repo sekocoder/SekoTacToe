@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "652285964638",
+    "project_id": "seko-tac-toe",
+    "storage_bucket": "seko-tac-toe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652285964638:android:2034b2357b250b0c401fcf",
+        "android_client_info": {
+          "package_name": "com.example.seko_tac_toe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652285964638-muu258l80lkqmisufin0513tsc9v8qup.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.seko_tac_toe",
+            "certificate_hash": "9f9d472b0691956f2e3d8bcbe4960cdfe188fb1a"
+          }
+        },
+        {
+          "client_id": "652285964638-hsnogv715q2489gl6ck1fteivl5i3rvn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf75Nrs92vqyaGjuVhOMu883DSZOWKj88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "652285964638-hsnogv715q2489gl6ck1fteivl5i3rvn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

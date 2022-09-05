@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Seko-Tac-Toe</string>
+    <string name="draw">Draw</string>
+    <string name="you_win">You Win</string>
+    <string name="player_1_win">Player 1 Win</string>
+    <string name="opponent_win">Opponent Win</string>
+    <string name="player_2_win">Player 2 Win</string>
+    <string name="reset_board">Reset Board</string>
+    <string name="multi_player">Multi Player</string>
+    <string name="single_player">Single Player</string>
+    <string name="o">O</string>
+    <string name="x">X</string>
+    <string name="selected">Selected</string>
+    <string name="sign_out">SIGN OUT</string>
+    <string name="sign_in">Sign In</string>
+    <string name="webclient_id">652285964638-hsnogv715q2489gl6ck1fteivl5i3rvn.apps.googleusercontent.com</string>
+</resources>
