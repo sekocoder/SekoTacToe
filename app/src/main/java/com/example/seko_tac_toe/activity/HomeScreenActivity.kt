@@ -24,6 +24,8 @@ class HomeScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
+        binding.signOutButton.visibility =View.GONE
 
         mAuth = FirebaseAuth.getInstance()
         viewModel = ViewModelProvider(this).get(HomeScreenViewModel::class.java)
@@ -47,7 +49,6 @@ class HomeScreenActivity : AppCompatActivity() {
                 binding.crossButton.visibility = View.VISIBLE
                 binding.circleButton.visibility = View.VISIBLE
                 binding.progressBar.visibility = View.GONE
-                Toast.makeText(this, "Select a Symbol", Toast.LENGTH_LONG).show()
             }, 2500)
 
         }

@@ -59,21 +59,24 @@ class SignInActivity : AppCompatActivity() {
             dbref =
                 FirebaseDatabase.getInstance("https://seko-tac-toe-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
 
-            dbref.addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    for (data in dataSnapshot.children) {
-                        if (data.child(uidCheck).exists()) {}
-                        else {
-                            dbref.child("user").child(auth.currentUser!!.uid)
-                                .setValue(User(winNumber, matchNumber, uidCheck))
-                        }
-                    }
-                }
+            dbref.child("user").child(auth.currentUser!!.uid)
+                .setValue(User(winNumber, matchNumber, uidCheck))
 
-                override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(this@SignInActivity, "fail check", Toast.LENGTH_LONG).show()
-                }
-            })
+//            dbref.addListenerForSingleValueEvent(object : ValueEventListener {
+//                override fun onDataChange(dataSnapshot: DataSnapshot) {
+//                    for (data in dataSnapshot.children) {
+//                        if (data.child(uidCheck).exists()) {
+//                        } else {
+//                            dbref.child("user").child(auth.currentUser!!.uid)
+//                                .setValue(User(winNumber, matchNumber, uidCheck))
+//                        }
+//                    }
+//                }
+//
+//                override fun onCancelled(error: DatabaseError) {
+//                    Toast.makeText(this@SignInActivity, "fail check", Toast.LENGTH_LONG).show()
+//                }
+//            })
 
         }, 2500)
 
