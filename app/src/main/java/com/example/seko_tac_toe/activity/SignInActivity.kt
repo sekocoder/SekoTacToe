@@ -46,9 +46,6 @@ class SignInActivity : AppCompatActivity() {
                 var intent = signInClient.signInIntent
                 startActivityForResult(intent, REQUEST_CODE_SIGN_IN)
             }
-//            signInClient.signInIntent.also {
-//
-//            }
         }
 
     }
