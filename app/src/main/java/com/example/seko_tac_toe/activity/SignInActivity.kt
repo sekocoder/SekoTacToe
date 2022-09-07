@@ -14,8 +14,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
+
 
 const val REQUEST_CODE_SIGN_IN = 0
 
@@ -42,22 +42,41 @@ class SignInActivity : AppCompatActivity() {
                 .requestEmail()
                 .build()
             val signInClient = GoogleSignIn.getClient(this, options)
-            signInClient.signInIntent.also {
-                startActivityForResult(it, REQUEST_CODE_SIGN_IN)
+            signInClient.signOut().addOnCompleteListener {
+                var intent = signInClient.signInIntent
+                startActivityForResult(intent, REQUEST_CODE_SIGN_IN)
             }
+//            signInClient.signInIntent.also {
+//
+//            }
         }
 
     }
 
     private fun addUsertodb() {
+
         Handler(Looper.myLooper()!!).postDelayed({
             val winNumber = 0
             val matchNumber = 0
             val uidCheck = auth.currentUser?.uid.toString()
             dbref =
                 FirebaseDatabase.getInstance("https://seko-tac-toe-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
-            dbref.child("user").child(auth.currentUser!!.uid)
-                .setValue(User(winNumber, matchNumber, uidCheck))
+
+            dbref.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    for (data in dataSnapshot.children) {
+                        if (data.child(uidCheck).exists()) {}
+                        else {
+                            dbref.child("user").child(auth.currentUser!!.uid)
+                                .setValue(User(winNumber, matchNumber, uidCheck))
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@SignInActivity, "fail check", Toast.LENGTH_LONG).show()
+                }
+            })
 
         }, 2500)
 

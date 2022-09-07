@@ -111,12 +111,12 @@ class HomeScreenActivity : AppCompatActivity() {
         }
     }
 
-//    fun signOut(view: View) {
-//        mAuth = FirebaseAuth.getInstance()
-//        mAuth.signOut()
-//        val intent = Intent(this, SignInActivity::class.java)
-//        startActivity(intent)
-//        finish()
-//    }
+    fun signOut(view: View) {
+        mAuth = FirebaseAuth.getInstance()
+        mAuth.signOut()
+        val intent = Intent(this, SignInActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 
 }
