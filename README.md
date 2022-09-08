@@ -14,8 +14,8 @@ A Tic-Tac-Toe Game Android Application
 4. Different UI for both Portrait and Landscape mode
 5. State Management achieved through ViewModel
 6. User can view Win Rate in single player mode
-7. User can SignOut and SignIn with a different Google Id
-8. Tic Tac Toe with aesthetic UI
+<!-- 7. User can SignOut and SignIn with a different Google Id -->
+7. Tic Tac Toe with aesthetic UI
 
 # Tech Stack Used
 
