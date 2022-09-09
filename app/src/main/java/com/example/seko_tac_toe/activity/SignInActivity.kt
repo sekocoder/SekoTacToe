@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -65,25 +64,13 @@ class SignInActivity : AppCompatActivity() {
                     if (dataSnapshot.exists()) {
                         for (data in dataSnapshot.children) {
                             if (data.child(uidCheck).exists()) {
-
-                                val user = data.child(uidCheck).getValue(User::class.java)
-                                val winNumberCurrent = user?.winNumber
-                                val matchNumberCurrent =user?.matchNumber
-                                val uidCheckCurrent =user?.uidCheck
-
-                                Log.d("cssk","$winNumberCurrent $matchNumberCurrent $uidCheckCurrent")
-
-                                dbref.child("user").child(auth.currentUser!!.uid)
-                                    .setValue(User(winNumberCurrent, matchNumberCurrent, uidCheckCurrent))
                             } else {
                                 dbref.child("user").child(auth.currentUser!!.uid)
                                     .setValue(User(winNumber, matchNumber, uidCheck))
 
                             }
                         }
-                    }
-
-                    else{
+                    } else {
                         dbref.child("user").child(auth.currentUser!!.uid)
                             .setValue(User(winNumber, matchNumber, uidCheck))
 
