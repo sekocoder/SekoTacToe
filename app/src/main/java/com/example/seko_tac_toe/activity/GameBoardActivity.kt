@@ -40,12 +40,17 @@ class GameBoardActivity : AppCompatActivity() {
             FirebaseDatabase.getInstance("https://seko-tac-toe-default-rtdb.asia-southeast1.firebasedatabase.app/")
                 .reference
 
+        mAuth = FirebaseAuth.getInstance()
+
         if (viewModel.gameMode == "Single Player") {
+
 
             dbref.child("user").addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (postSnapshot in snapshot.children) {
-                        currentUser = postSnapshot.getValue(User::class.java)!!
+                        if (postSnapshot.child("uidCheck").value.toString() == mAuth.currentUser!!.uid) {
+                            currentUser = postSnapshot.getValue(User::class.java)!!
+                        }
                     }
                 }
 

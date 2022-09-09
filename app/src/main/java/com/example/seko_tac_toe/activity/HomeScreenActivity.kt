@@ -24,8 +24,8 @@ class HomeScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
-        binding.signOutButton.visibility =View.GONE
+
+        //binding.signOutButton.visibility =View.GONE
 
         mAuth = FirebaseAuth.getInstance()
         viewModel = ViewModelProvider(this).get(HomeScreenViewModel::class.java)

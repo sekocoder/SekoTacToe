@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -59,24 +60,39 @@ class SignInActivity : AppCompatActivity() {
             dbref =
                 FirebaseDatabase.getInstance("https://seko-tac-toe-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
 
-            dbref.child("user").child(auth.currentUser!!.uid)
-                .setValue(User(winNumber, matchNumber, uidCheck))
+            dbref.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        for (data in dataSnapshot.children) {
+                            if (data.child(uidCheck).exists()) {
 
-//            dbref.addListenerForSingleValueEvent(object : ValueEventListener {
-//                override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                    for (data in dataSnapshot.children) {
-//                        if (data.child(uidCheck).exists()) {
-//                        } else {
-//                            dbref.child("user").child(auth.currentUser!!.uid)
-//                                .setValue(User(winNumber, matchNumber, uidCheck))
-//                        }
-//                    }
-//                }
-//
-//                override fun onCancelled(error: DatabaseError) {
-//                    Toast.makeText(this@SignInActivity, "fail check", Toast.LENGTH_LONG).show()
-//                }
-//            })
+                                val user = data.child(uidCheck).getValue(User::class.java)
+                                val winNumberCurrent = user?.winNumber
+                                val matchNumberCurrent =user?.matchNumber
+                                val uidCheckCurrent =user?.uidCheck
+
+                                Log.d("cssk","$winNumberCurrent $matchNumberCurrent $uidCheckCurrent")
+
+                                dbref.child("user").child(auth.currentUser!!.uid)
+                                    .setValue(User(winNumberCurrent, matchNumberCurrent, uidCheckCurrent))
+                            } else {
+                                dbref.child("user").child(auth.currentUser!!.uid)
+                                    .setValue(User(winNumber, matchNumber, uidCheck))
+
+                            }
+                        }
+                    }
+
+                    else{
+                        dbref.child("user").child(auth.currentUser!!.uid)
+                            .setValue(User(winNumber, matchNumber, uidCheck))
+
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
 
         }, 2500)
 
